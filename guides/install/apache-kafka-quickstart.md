@@ -3,10 +3,17 @@
 
 #### Step 1: Get Kafka
 
-[Download](https://kafka.apache.org/downloads) the latest Kafka release and extract it:
+[Download](https://kafka.apache.org/downloads) the latest Kafka release and extract it.
+Do no progress to the wget command, please examint the website on the link above.
+
+For the download, the particular linux command would be:
 
 ```bash
+wget https://downloads.apache.org/kafka/3.5.0/kafka_2.13-3.5.0.tgz
+```bash
 
+For the extract, the particular linux command would be:
+```bash
 $ tar -xzf kafka_2.13-3.5.0.tgz
 $ cd kafka_2.13-3.5.0
 ```

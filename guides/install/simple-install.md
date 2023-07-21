@@ -17,7 +17,7 @@ sudo apt-get upgrade
 
 Kafka needs Java to run. You can install Java (OpenJDK 8, 11, 17). In this training we are going to use OpenJDK 11.
 
-To install Java see: [Install Java (OpenJDK 11)](install-java-openjdk-11.md)
+To install Java see: [Install Java (OpenJDK 11)](install-java-openjdk-11.md) in this guide.
 
 
 Verify the installation:
@@ -32,7 +32,7 @@ java -version
 You can download Kafka from the official Apache website. At the time of writing this, the latest Kafka version is 2.8.0 (Please check the latest version on the official Apache Kafka site).
 
 ```
-wget http://apache.mirrors.hoobly.com/kafka/2.8.0/kafka_2.13-2.8.0.tgz
+wget https://downloads.apache.org/kafka/3.5.0/kafka_2.13-3.5.0.tgz
 
 ```
 

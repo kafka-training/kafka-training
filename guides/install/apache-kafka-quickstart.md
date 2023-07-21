@@ -1,16 +1,17 @@
 # Apache Kafka Quickstart
 
 
-#### [](https://kafka.apache.org/quickstart#quickstart_download)[Step 1: Get Kafka](https://kafka.apache.org/quickstart#quickstart_download)
+#### Step 1: Get Kafka
 
-[Download](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.5.0/kafka_2.13-3.5.0.tgz) the latest Kafka release and extract it:
+[Download](https://kafka.apache.org/downloads) the latest Kafka release and extract it:
 
 ```bash
+
 $ tar -xzf kafka_2.13-3.5.0.tgz
 $ cd kafka_2.13-3.5.0
 ```
 
-#### [](https://kafka.apache.org/quickstart#quickstart_startserver)[Step 2: Start the Kafka environment](https://kafka.apache.org/quickstart#quickstart_startserver)
+#### Step 2: Start the Kafka environment
 
 NOTE: Your local environment must have Java 8+ installed.
 
@@ -56,7 +57,7 @@ $ bin/kafka-server-start.sh config/kraft/server.properties
 
 Once the Kafka server has successfully launched, you will have a basic Kafka environment running and ready to use.
 
-#### [](https://kafka.apache.org/quickstart#quickstart_createtopic)[Step 3: Create a topic to store your events](https://kafka.apache.org/quickstart#quickstart_createtopic)
+#### Step 3: Create a topic to store your events
 
 Kafka is a distributed _event streaming platform_ that lets you read, write, store, and process [_events_](https://kafka.apache.org/documentation/#messages) (also called _records_ or _messages_ in the documentation) across many machines.
 
@@ -76,7 +77,7 @@ Topic: quickstart-events        TopicId: NPmZHyhbR9y00wMglMH2sg PartitionCount: 
     Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0
 ```
 
-#### [](https://kafka.apache.org/quickstart#quickstart_send)[Step 4: Write some events into the topic](https://kafka.apache.org/quickstart#quickstart_send)
+#### Step 4: Write some events into the topic
 
 A Kafka client communicates with the Kafka brokers via the network for writing (or reading) events. Once received, the brokers will store the events in a durable and fault-tolerant manner for as long as you need—even forever.
 
@@ -90,7 +91,7 @@ This is my second event
 
 You can stop the producer client with `Ctrl-C` at any time.
 
-#### [](https://kafka.apache.org/quickstart#quickstart_consume)[Step 5: Read the events](https://kafka.apache.org/quickstart#quickstart_consume)
+#### Step 5: Read the events
 
 Open another terminal session and run the console consumer client to read the events you just created:
 
@@ -106,7 +107,7 @@ Feel free to experiment: for example, switch back to your producer terminal (pre
 
 Because events are durably stored in Kafka, they can be read as many times and by as many consumers as you want. You can easily verify this by opening yet another terminal session and re-running the previous command again.
 
-#### [](https://kafka.apache.org/quickstart#quickstart_kafkaconnect)[Step 6: Import/export your data as streams of events with Kafka Connect](https://kafka.apache.org/quickstart#quickstart_kafkaconnect)
+#### Step 6: Import/export your data as streams of events with Kafka Connect
 
 You probably have lots of data in existing systems like relational databases or traditional messaging systems, along with many applications that already use these systems. [Kafka Connect](https://kafka.apache.org/documentation/#connect) allows you to continuously ingest data from external systems into Kafka, and vice versa. It is an extensible tool that runs _connectors_, which implement the custom logic for interacting with an external system. It is thus very easy to integrate existing systems with Kafka. To make this process even easier, there are hundreds of such connectors readily available.
 
@@ -166,7 +167,7 @@ The connectors continue to process data, so we can add data to the file and see 
 
 You should see the line appear in the console consumer output and in the sink file.
 
-#### [](https://kafka.apache.org/quickstart#quickstart_kafkastreams)[Step 7: Process your events with Kafka Streams](https://kafka.apache.org/quickstart#quickstart_kafkastreams)
+#### Step 7: Process your events with Kafka Streams
 
 Once your data is stored in Kafka as events, you can process the data with the [Kafka Streams](https://kafka.apache.org/documentation/streams) client library for Java/Scala. It allows you to implement mission-critical real-time applications and microservices, where the input and/or output data is stored in Kafka topics. Kafka Streams combines the simplicity of writing and deploying standard Java and Scala applications on the client side with the benefits of Kafka's server-side cluster technology to make these applications highly scalable, elastic, fault-tolerant, and distributed. The library supports exactly-once processing, stateful operations and aggregations, windowing, joins, processing based on event-time, and much more.
 
@@ -185,7 +186,7 @@ wordCounts.toStream().to("output-topic", Produced.with(Serdes.String(), Serdes.L
 
 The [Kafka Streams demo](https://kafka.apache.org/documentation/streams/quickstart) and the [app development tutorial](https://kafka.apache.org/35/documentation/streams/tutorial) demonstrate how to code and run such a streaming application from start to finish.
 
-#### [](https://kafka.apache.org/quickstart#quickstart_kafkaterminate)[Step 8: Terminate the Kafka environment](https://kafka.apache.org/quickstart#quickstart_kafkaterminate)
+#### Step 8: Terminate the Kafka environment
 
 Now that you reached the end of the quickstart, feel free to tear down the Kafka environment—or continue playing around.
 
@@ -199,7 +200,7 @@ If you also want to delete any data of your local Kafka environment including an
 $ rm -rf /tmp/kafka-logs /tmp/zookeeper /tmp/kraft-combined-logs
 ```
 
-#### [](https://kafka.apache.org/quickstart#quickstart_kafkacongrats)[Congratulations!](https://kafka.apache.org/quickstart#quickstart_kafkacongrats)
+#### [Congratulations!]
 
 You have successfully finished the Apache Kafka quickstart.
 

@@ -16,8 +16,8 @@ wget https://downloads.apache.org/kafka/3.5.0/kafka_2.13-3.5.0.tgz
 
 For the extract, the particular linux command would be:
 ```bash
-$ tar -xzf kafka_2.13-3.5.0.tgz
-$ cd kafka_2.13-3.5.0
+tar -xzf kafka_2.13-3.5.0.tgz
+cd kafka_2.13-3.5.0
 ```
 
 #### Step 2: Start the Kafka environment
@@ -32,14 +32,14 @@ Run the following commands in order to start all services in the correct order:
 
 ```bash
 # Start the ZooKeeper service
-$ bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
 Open another terminal session and run:
 
 ```bash
 # Start the Kafka broker service
-$ bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-start.sh config/server.properties
 ```
 
 Once all services have successfully launched, you will have a basic Kafka environment running and ready to use.
@@ -49,19 +49,19 @@ Once all services have successfully launched, you will have a basic Kafka enviro
 Generate a Cluster UUID
 
 ```bash
-$ KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
+KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
 ```
 
 Format Log Directories
 
 ```bash
-$ bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties
+bin/kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c config/kraft/server.properties
 ```
 
 Start the Kafka Server
 
 ```bash
-$ bin/kafka-server-start.sh config/kraft/server.properties
+bin/kafka-server-start.sh config/kraft/server.properties
 ```
 
 Once the Kafka server has successfully launched, you will have a basic Kafka environment running and ready to use.
@@ -75,13 +75,13 @@ Example events are payment transactions, geolocation updates from mobile phones,
 So before you can write your first events, you must create a topic. Open another terminal session and run:
 
 ```bash
-$ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
 ```
 
 All of Kafka's command line tools have additional options: run the `kafka-topics.sh` command without any arguments to display usage information. For example, it can also show you [details such as the partition count](https://kafka.apache.org/documentation/#intro_concepts_and_terms) of the new topic:
 
 ```bash
-$ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
 Topic: quickstart-events        TopicId: NPmZHyhbR9y00wMglMH2sg PartitionCount: 1       ReplicationFactor: 1Configs:
     Topic: quickstart-events Partition: 0    Leader: 0   Replicas: 0 Isr: 0
 ```
@@ -93,7 +93,7 @@ A Kafka client communicates with the Kafka brokers via the network for writing (
 Run the console producer client to write a few events into your topic. By default, each line you enter will result in a separate event being written to the topic.
 
 ```bash
-$ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
 This is my first event
 This is my second event
 ```
@@ -105,7 +105,7 @@ You can stop the producer client with `Ctrl-C` at any time.
 Open another terminal session and run the console consumer client to read the events you just created:
 
 ```bash
-$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 This is my first event
 This is my second event
 ```
@@ -206,7 +206,7 @@ Now that you reached the end of the quickstart, feel free to tear down the Kafka
 If you also want to delete any data of your local Kafka environment including any events you have created along the way, run the command:
 
 ```bash
-$ rm -rf /tmp/kafka-logs /tmp/zookeeper /tmp/kraft-combined-logs
+rm -rf /tmp/kafka-logs /tmp/zookeeper /tmp/kraft-combined-logs
 ```
 
 #### [Congratulations!]

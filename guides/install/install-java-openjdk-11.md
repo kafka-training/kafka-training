@@ -48,7 +48,7 @@ java -version
 If OpenJDK 11 is installed successfully, you will see output similar to this:
 
 ```
-javaCopy codeopenjdk version "11.0.11" 2021-04-20
+openjdk version "11.0.11" 2021-04-20
 OpenJDK Runtime Environment (build 11.0.11+9-Ubuntu-0ubuntu2.22.04)
 OpenJDK 64-Bit Server VM (build 11.0.11+9-Ubuntu-0ubuntu2.22.04, mixed mode, sharing)
 

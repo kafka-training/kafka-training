@@ -15,12 +15,10 @@ sudo apt-get upgrade
 
 **Step 2: Install Java**
 
-Kafka needs Java to run. You can install Java (OpenJDK 8) using the following commands:
+Kafka needs Java to run. You can install Java (OpenJDK 8, 11, 17). In this training we are going to use OpenJDK 11.
 
-```
-sudo apt-get install openjdk-8-jdk
+To install Java see: [Install Java (OpenJDK 11)](install-java-openjdk-11.md)
 
-```
 
 Verify the installation:
 

@@ -4,7 +4,8 @@
 #### Step 1: Get Kafka
 
 [Download](https://kafka.apache.org/downloads) the latest Kafka release and extract it.
-Do no progress to the wget command, please examint the website on the link above.
+
+Do no progress to the wget command, before it please examine the website on the link above.
 
 For the download, the particular linux command would be:
 

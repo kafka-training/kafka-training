@@ -10,7 +10,8 @@ For the download, the particular linux command would be:
 
 ```bash
 wget https://downloads.apache.org/kafka/3.5.0/kafka_2.13-3.5.0.tgz
-```bash
+```
+
 
 For the extract, the particular linux command would be:
 ```bash

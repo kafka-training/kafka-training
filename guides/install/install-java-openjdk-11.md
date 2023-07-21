@@ -17,8 +17,10 @@ You can check if OpenJDK 11 is available in the package repository with this com
 
 ```
 sudo apt search openjdk
+# alternatively you can use sudo apt search openjdk | grep openjdk-11
 
 ```
+
 
 This will list all the available OpenJDK packages. Look for OpenJDK 11 in this list.
 
@@ -28,6 +30,7 @@ If OpenJDK 11 is available, you can install it with the following command:
 
 ```
 sudo apt install openjdk-11-jdk
+# alternatively you can use: sudo apt install -y openjdk-11-jdk
 
 ```
 

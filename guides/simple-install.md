@@ -1,4 +1,7 @@
-. This guide assumes that you are running a relatively recent version of Ubuntu and you have `sudo` privileges.
+## Simple install and smoke test
+
+
+This guide assumes that you are running a relatively recent version of Ubuntu and you have `sudo` privileges.
 
 **Step 1: Update System**
 

@@ -11,7 +11,7 @@ public class KafkaConsumerGroupDemo {
     public static void main(String[] args) {
         String topicName = "demo-topic";
         String bootstrapServers = "10.35.125.101:9092";
-        String groupId = "demo-consumer-group04";
+        String groupId = "demo-consumer-group";
 
         Properties props = new Properties();
         props.put("bootstrap.servers", bootstrapServers);

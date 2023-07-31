@@ -4,7 +4,7 @@ from kafka import KafkaConsumer
 consumer = KafkaConsumer(bootstrap_servers='10.35.125.101:9092')
 consumer = KafkaConsumer( 
     bootstrap_servers='10.35.125.101:9092',
-    group_id="python-consumer-group04",
+    group_id="python-consumer-group",
     # enable_auto_commit=True,
     # group_id=os.environ["CONSUMER_GROUP"],
     # key_deserializer=lambda x: json.loads(x.decode("utf-8")),

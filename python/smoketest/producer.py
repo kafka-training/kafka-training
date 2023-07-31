@@ -1,7 +1,7 @@
 from kafka import KafkaProducer
 import time
 
-# Initialize the Kafka producer
+# Initialize the Kafka producer 
 producer = KafkaProducer(bootstrap_servers='10.35.125.101:9092')
 
 # Topic to which messages will be sent

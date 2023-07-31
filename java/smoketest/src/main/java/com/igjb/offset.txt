@@ -1,0 +1,3 @@
+        //props.put("auto.offset.reset", "earliest");
+        // in server.properties: default.auto.offset.reset=earliest
+        // or default.auto.offset.reset=latest

@@ -11,6 +11,7 @@ public class KafkaProducerDemo {
 
         Properties props = new Properties();
         props.put("bootstrap.servers", bootstrapServers);
+        // todo: implement encoding deterministic encoding (for example utf-8)
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 

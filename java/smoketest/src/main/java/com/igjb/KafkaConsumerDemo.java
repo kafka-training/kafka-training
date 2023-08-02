@@ -12,7 +12,7 @@ import java.time.Duration;
 public class KafkaConsumerDemo {
     public static void main(String[] args) {
         String topicName = "demo-topic";
-        String bootstrapServers = "10.35.125.101:9092";
+        String bootstrapServers = "10.35.125.102:9092";
 
         Properties props = new Properties();
         props.put("bootstrap.servers", bootstrapServers);
@@ -29,8 +29,8 @@ public class KafkaConsumerDemo {
 
             while (true) {
                 Duration timeout = Duration.ofMillis(100);
-                ConsumerRecords<String, String> records = consumer.poll(timeout);
-                records.forEach(record -> {
+                ConsumerRecords<String, String> messages = consumer.poll(timeout);
+                messages.forEach(record -> {
                     System.out.println("Received message: " + record.value());
                 });
             }

@@ -127,26 +127,19 @@ First, make sure to add `connect-file-3.5.0.jar` to the `plugin.path` property i
 Edit the `config/connect-standalone.properties` file, add or change the `plugin.path` configuration property match the following, and save the file:
 
 ```
-> echo "plugin.path=libs/connect-file-3.5.0.jar"
+plugin.path=libs/connect-file-3.5.0.jar
 ```
 
 Then, start by creating some seed data to test with:
 
 ```
-> echo -e "foo\nbar" > test.txt
-```
-
-Or on Windows:
-
-```
-> echo foo> test.txt
-> echo bar>> test.txt
+echo -e "foo\nbar" > test.txt
 ```
 
 Next, we'll start two connectors running in _standalone_ mode, which means they run in a single, local, dedicated process. We provide three configuration files as parameters. The first is always the configuration for the Kafka Connect process, containing common configuration such as the Kafka brokers to connect to and the serialization format for data. The remaining configuration files each specify a connector to create. These files include a unique connector name, the connector class to instantiate, and any other configuration required by the connector.
 
 ```
-> bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-source.properties config/connect-file-sink.properties
+bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-source.properties config/connect-file-sink.properties
 ```
 
 These sample configuration files, included with Kafka, use the default local cluster configuration you started earlier and create two connectors: the first is a source connector that reads lines from an input file and produces each to a Kafka topic and the second is a sink connector that reads messages from a Kafka topic and produces each as a line in an output file.
@@ -154,7 +147,7 @@ These sample configuration files, included with Kafka, use the default local clu
 During startup you'll see a number of log messages, including some indicating that the connectors are being instantiated. Once the Kafka Connect process has started, the source connector should start reading lines from `test.txt` and producing them to the topic `connect-test`, and the sink connector should start reading messages from the topic `connect-test` and write them to the file `test.sink.txt`. We can verify the data has been delivered through the entire pipeline by examining the contents of the output file:
 
 ```
-> more test.sink.txt
+more test.sink.txt
 foo
 bar
 ```
@@ -162,7 +155,7 @@ bar
 Note that the data is being stored in the Kafka topic `connect-test`, so we can also run a console consumer to see the data in the topic (or use custom consumer code to process it):
 
 ```
-> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic connect-test --from-beginning
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic connect-test --from-beginning
 {"schema":{"type":"string","optional":false},"payload":"foo"}
 {"schema":{"type":"string","optional":false},"payload":"bar"}
 ...
@@ -171,7 +164,7 @@ Note that the data is being stored in the Kafka topic `connect-test`, so we can 
 The connectors continue to process data, so we can add data to the file and see it move through the pipeline:
 
 ```
-> echo Another line>> test.txt
+echo Another line>> test.txt
 ```
 
 You should see the line appear in the console consumer output and in the sink file.

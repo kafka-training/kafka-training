@@ -69,7 +69,8 @@ After=network.target remote-fs.target kafka-zookeeper.service
 
 [Service]
 Type=simple
-User=kafkaEnvironment=JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+User=kafka
+Environment=JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
 ExecStop=/opt/kafka/bin/kafka-server-stop.sh
 

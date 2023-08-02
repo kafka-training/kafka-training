@@ -131,9 +131,25 @@ Make sure to replace `/path/to/single_node_kafka_data`, `/path/to/kafka_data_1`,
 
 ## Appendix B: Smoke Test
 
+Create a topic on the newly created cluster:
+
 ```
 bin/kafka-topics.sh --bootstrap-server localhost:9092 --create \
                       --topic my_topic \
                       --partitions 3 \
                       --replication-factor 3
+                     
+                    
+```
+
+Check the topic details:
+
+```
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic my_topic
+```
+
+Check the topic exist on all brokers:
+
+```
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic my_topic
 ```

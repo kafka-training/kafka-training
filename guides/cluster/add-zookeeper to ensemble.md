@@ -34,7 +34,7 @@ server.1=existing_zk_server_ip:port:port
 server.2=new_zk_server_ip:port:port
 ```
 
-Replace `existing_zk_server_ip` and `port` with the IP address and port of the existing ZooKeeper server in the ensemble. If you are unsure about the server number (`server.1`), you can check the `myid` file in the `dataDir` directory to find the server number associated with the standalone instance.
+Replace `existing_zk_server_ip` and `port` with the IP address and port of the existing ZooKeeper server in the ensemble. 
 
 Step 4: Do the same on the existing ZooKeeper server. Edit the configuration file on the existing ZooKeeper server in the ensemble and add the following line: (standard ports are 2888 and 3888)
 

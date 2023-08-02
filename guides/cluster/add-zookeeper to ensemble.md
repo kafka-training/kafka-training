@@ -22,6 +22,7 @@ Step 2: Remove data directory Remove the data directory (or specific data files)
 
 ```
 $ rm -rf /path/to/zookeeper/dataDir/*
+```
 
 
 Step 3: Edit the configuration Open the ZooKeeper configuration file (`zoo.cfg`) in an editor and ensure the following settings are correct: (note in a kafka installation the zookeeper configuration file is located at `config/zookeeper.properties`)

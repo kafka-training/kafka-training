@@ -19,3 +19,10 @@ producer.flush()
 
 # Close the producer
 producer.close()
+
+# Tips:
+# check server, what topics are there:
+# $ kafka-topics.sh --list --bootstrap-server <broker_list>
+# check topic:
+# $ kafka-topics.sh --describe --bootstrap-server <broker_list> --topic <topic_name>
+

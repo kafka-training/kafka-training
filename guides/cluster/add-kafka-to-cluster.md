@@ -25,7 +25,7 @@ To add an existing single-node Kafka instance to another Kafka cluster, you need
 9.  **Rebalance and Replication:** As the single-node Kafka instance joins the new cluster, ensure that the topic partitions are properly distributed across the brokers and the replication factor is set correctly.
 
 
-Appendix A: Sample Kafka Configurations
+## Appendix A: Sample Kafka Configurations
 
 **Single-Node Kafka Instance Configuration (`server.properties`):**
 
@@ -129,4 +129,11 @@ zookeeper.connect=10.30.30.1:2181,10.30.30.2:2181,10.30.30.3:2181
 
 Make sure to replace `/path/to/single_node_kafka_data`, `/path/to/kafka_data_1`, `/path/to/kafka_data_2`, and `/path/to/kafka_data_3` with the actual paths for data storage on each node.
 
+## Appendix B: Smoke Test
 
+```
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --create \
+                      --topic my_topic \
+                      --partitions 3 \
+                      --replication-factor 3
+```

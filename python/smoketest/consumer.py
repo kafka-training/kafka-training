@@ -1,9 +1,8 @@
 from kafka import KafkaConsumer
 
 # Initialize the Kafka consumer 
-consumer = KafkaConsumer(bootstrap_servers='10.35.125.101:9092')
 consumer = KafkaConsumer( 
-    bootstrap_servers='10.35.125.101:9092',
+    bootstrap_servers='10.35.125.xxx:9092',
   )
 consumer.subscribe(['my-topic'])
 

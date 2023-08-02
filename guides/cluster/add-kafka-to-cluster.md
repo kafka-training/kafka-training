@@ -47,7 +47,7 @@ log.dirs=/path/to/single_node_kafka_data
 # ZooKeeper connection string for the single-node Kafka instance
 zookeeper.connect=10.30.30.1:2181
 
-# Other Kafka configuration properties (adjust as needed)
+# Other Kafka configuration properties (adjust as needed) 
 
 ```
 

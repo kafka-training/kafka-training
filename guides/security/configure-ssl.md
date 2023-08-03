@@ -38,7 +38,7 @@ keytool -importcert -v -keystore broker-keystore.jks -alias broker -file broker-
 Create a `server.properties` file for the Kafka broker and add the following SSL-related configurations:
 
 ```
-propertiesCopy codelisteners=SSL://<broker-hostname>:9093
+listeners=SSL://<broker-hostname>:9093
 security.inter.broker.protocol=SSL
 ssl.keystore.location=/path/to/broker-keystore.jks
 ssl.keystore.password=<keystore-password>
@@ -55,7 +55,7 @@ For each Kafka client (producer and consumer), you need to configure SSL setting
 1.  **Producer Configuration (`producer.properties`)**
 
 ```
-propertiesCopy codebootstrap.servers=<broker-hostname>:9093
+bootstrap.servers=<broker-hostname>:9093
 security.protocol=SSL
 ssl.truststore.location=/path/to/ca-keystore.jks
 ssl.truststore.password=<truststore-password>
@@ -65,7 +65,7 @@ ssl.truststore.password=<truststore-password>
 2.  **Consumer Configuration (`consumer.properties`)**
 
 ```
-propertiesCopy codebootstrap.servers=<broker-hostname>:9093
+bootstrap.servers=<broker-hostname>:9093
 security.protocol=SSL
 ssl.truststore.location=/path/to/ca-keystore.jks
 ssl.truststore.password=<truststore-password>
